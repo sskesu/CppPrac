@@ -13,5 +13,24 @@ int main() {
 
 	DL.PrintAll();
 
+	int num = DL.Pop_Back();
+	cout << num << endl;
+
+	num = DL.Pop_Front();
+	cout << num << endl;
+
+	DL.PrintAll();
+
+	DL.Insert(3, 7);
+
+	DL.PrintAll();
+
+	DL.Insert(4, 2, 8);
+
+	DL.PrintAll();
+
+	DL.DeleteNode(3);
+
+	DL.PrintAll();
 	return 0;
 }
