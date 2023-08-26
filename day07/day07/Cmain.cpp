@@ -10,13 +10,13 @@ int main() {
 	BT.AddNode(17);
 	BT.AddNode(30);
 	BT.AddNode(32);
+	BT.AddNode(7);
 
 	BT.PrintAll();
 	cout << "天天天天天天" << endl;
 
 	//
-	BT.RemoveNode(30);
-	BT.RemoveNode(32);
+	BT.RemoveNode(20);
 	BT.PrintAll();
 
 	return 0;

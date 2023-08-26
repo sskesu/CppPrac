@@ -14,7 +14,45 @@ void BinaryTree::AddNode(int data)
 void BinaryTree::RemoveNode(int data)
 {
 	if (rootNode->data == data) {
-		rootNode->data = -99;
+		if (rootNode->left == nullptr || rootNode->right == nullptr) {
+			Node* temp = new Node;
+			temp = DeleteNode(rootNode, data);
+			delete rootNode;
+			rootNode = temp;
+		}
+		else {
+			Node* temp = rootNode->left;
+			Node* temp2 = temp->right;
+			
+			if (temp2 == nullptr) {
+				temp2 = rootNode->right;
+				delete rootNode;
+				rootNode = temp;
+			}
+			else {
+
+				while (temp2->right != nullptr) {
+					temp = temp2;
+					temp2 = temp->right;
+				}
+				if (temp2->left == nullptr) {
+					temp2->left = rootNode->left;
+					temp2->right = rootNode->right;
+					delete rootNode;
+					rootNode = temp2;
+					temp->right = nullptr;
+				}
+				else {
+					temp->right = temp2->left;
+					temp2->left = rootNode->left;
+					temp2->right = rootNode->right;
+					delete rootNode;
+					rootNode = temp2;
+					
+				}
+			}
+			
+		}
 	}
 	else {
 		Node* newNode = new Node;
@@ -25,20 +63,48 @@ void BinaryTree::RemoveNode(int data)
 			if (newNode->data > data) {
 				temp = newNode->left;
 				if (temp->data == data) {
-					temp = DeleteNode(temp, data);
-					delete newNode->left;
-					newNode->left = temp;
-					break;
+					if (temp->left == nullptr || temp->right == nullptr) {
+						temp = DeleteNode(temp, data); 
+						delete newNode->left;
+						newNode->left = temp;
+						break;
+					}
+					else {
+						temp = DeleteNode(temp, data);
+						if (temp != (newNode->left)->left) {
+							temp->left = (newNode->left)->left;
+						}
+						if (temp != (newNode->left)->right) {
+							temp->right = (newNode->left)->right;
+						}
+						delete newNode->left;
+						newNode->left = temp;
+						break;
+					}
 				}
 				newNode = temp;
 			}
 			else {
 				temp = newNode->right;
 				if (temp->data == data) {
-					temp = DeleteNode(temp, data);
-					delete newNode->right;
-					newNode->right = temp;
-					break;
+					if (temp->left == nullptr || temp->right == nullptr) {
+						temp = DeleteNode(temp, data);
+						delete newNode->right;
+						newNode->right = temp;
+						break;
+					}
+					else {
+						temp = DeleteNode(temp, data);
+						if (temp != (newNode->right)->left) {
+							temp->left = (newNode->right)->left;
+						}
+						if (temp != (newNode->right)->right) {
+							temp->right = (newNode->right)->right;
+						}
+						delete newNode->right;
+						newNode->right = temp;
+						break;
+					}
 				}
 				newNode = temp;
 			}
@@ -96,7 +162,11 @@ Node* BinaryTree::DeleteNode(Node* newNode, int data)
 		temp = newNode->right;
 	}
 	else {
-
+		temp = newNode->left; 
+		temp = DeleteNode(temp, data);
+		if (temp == nullptr) {
+			temp = newNode->left;
+		}
 	}
 	return temp;
 }
