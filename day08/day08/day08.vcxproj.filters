@@ -14,7 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="소스 파일\HashMap">
-      <UniqueIdentifier>{2ed2a130-4307-442c-82b3-970da91676ff}</UniqueIdentifier>
+      <UniqueIdentifier>{cde9cb19-c252-464c-8097-5ca75e89a855}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

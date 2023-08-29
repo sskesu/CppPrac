@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ca733819-e2a3-490a-85b4-938fbd143a4c}</ProjectGuid>
+    <ProjectGuid>{cd71d7f2-fb94-4505-a5be-8dc7fdacac79}</ProjectGuid>
     <RootNamespace>day08</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

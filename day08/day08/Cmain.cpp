@@ -4,16 +4,17 @@ int main() {
 
 	HashMap HM;
 
-	HM.Add(3, 7);
-	int num = HM.GetValue(3);
-	//HM.Add(14, 2); // <<
-	//HM.Add(4, 3);
-	//
-	//HM.Add(1, 4);
-	//HM.Add(111, 5);
+	HM.Add(3, 1);
+	HM.Add(13, 2);
+	HM.Add(23, 3);
+	HM.Add(33, 4);
+	// [-99][-99][-99][1][2][3][4][-99][-99][-99]
+	int num = HM.GetValue(13);
+
+	num = HM.Count();
 	cout << num << endl;
-	//num = HM.Count();
-	cout << num << endl;
+
+
 
 	return 0;
 }
