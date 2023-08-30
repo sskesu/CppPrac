@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Administrator\Desktop\SBS_Month4_2\DS\Week3\day08\day08\</FILEPATH>
+      <FILENAME>HashMap.cpp</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>초기화되지 않은 메모리 '*table'을(를) 사용하고 있습니다.</DESCRIPTION>
+    <FUNCTION>HashMap::{ctor}</FUNCTION>
+    <DECORATED>??0HashMap@@QEAA@XZ</DECORATED>
+    <FUNCLINE>53</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Administrator\Desktop\SBS_Month4_2\DS\Week3\day08\day08\</FILEPATH>
+        <FILENAME>HashMap.cpp</FILENAME>
+        <LINE>55</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'*table'이(가) 초기화되지 않았습니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Administrator\Desktop\SBS_Month4_2\DS\Week3\day08\day08\</FILEPATH>
+        <FILENAME>HashMap.cpp</FILENAME>
+        <LINE>57</LINE>
+        <COLUMN>13</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Administrator\Desktop\SBS_Month4_2\DS\Week3\day08\day08\</FILEPATH>
+        <FILENAME>HashMap.cpp</FILENAME>
+        <LINE>57</LINE>
+        <COLUMN>22</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>이 루프 시작, ('i&lt;10' 가정)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Administrator\Desktop\SBS_Month4_2\DS\Week3\day08\day08\</FILEPATH>
+        <FILENAME>HashMap.cpp</FILENAME>
+        <LINE>58</LINE>
+        <COLUMN>23</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'*table'이(가) 사용되는데 초기화되지 않았을 수 있습니다.</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT></DEFECTS>

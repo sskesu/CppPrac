@@ -1,0 +1,156 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6001",
+          "message": {
+            "text": "초기화되지 않은 메모리 '*table'을(를) 사용하고 있습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Administrator/Desktop/SBS_Month4_2/DS/Week3/day08/day08/HashMap.cpp"
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 9,
+                  "endLine": 58,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HashMap::{ctor}",
+                  "decoratedName": "??0HashMap@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Administrator/Desktop/SBS_Month4_2/DS/Week3/day08/day08/HashMap.cpp"
+                          },
+                          "region": {
+                            "startLine": 55,
+                            "startColumn": 11
+                          }
+                        },
+                        "message": {
+                          "text": "'*table'이(가) 초기화되지 않았습니다."
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Administrator/Desktop/SBS_Month4_2/DS/Week3/day08/day08/HashMap.cpp"
+                          },
+                          "region": {
+                            "startLine": 57,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Administrator/Desktop/SBS_Month4_2/DS/Week3/day08/day08/HashMap.cpp"
+                          },
+                          "region": {
+                            "startLine": 57,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "이 루프 시작, ('i<10' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Administrator/Desktop/SBS_Month4_2/DS/Week3/day08/day08/HashMap.cpp"
+                          },
+                          "region": {
+                            "startLine": 58,
+                            "startColumn": 24
+                          }
+                        },
+                        "message": {
+                          "text": "'*table'이(가) 사용되는데 초기화되지 않았을 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.37.32822.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Administrator/Desktop/SBS_Month4_2/DS/Week3/day08/day08/HashMap.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c200792bee19fb5fe9f72be7cff708803d6f061824b6d1a689443b1040ebc04c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/administrator/desktop/sbs_month4_2/ds/week3/day08/day08/hashmap.h"
+          },
+          "hashes": {
+            "sha-256": "6d7cd1ca5f53ee9cd8d843c83b290362c4d113c9991ff4d3192c5447a86f2d4d"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -2,71 +2,83 @@
 
 void HashMap::Add(int key, int value)
 {
-    Node* temp = *table;
-    for (int i = 0; i < key % TABLE_SIZE; i++) {
-        temp = temp->hashNext;
+    if (table[key % TABLE_SIZE] == nullptr) {
+        Node* temp = new Node{
+            key,
+            value,
+            nullptr
+        };
+        table[key % TABLE_SIZE] = temp;
     }
-    while (temp->key != -99) {
-        temp = temp->hashNext;
+    else {
+        int num = key % TABLE_SIZE; //num = 3
+        while (table[num] != nullptr) {
+            num++; // num = 4
+            if (num == TABLE_SIZE) {
+                num = 0;
+            }
+        }
+        Node* temp = new Node{
+            key,
+            value,
+            nullptr
+        };
+        table[num] = temp; 
     }
-    temp->data = value;
-    temp->key = key;
 }
 
 int HashMap::GetValue(int key)
 {
-    Node* temp = *table;
-    while (temp->key != key) {
-        temp = temp->hashNext;
+    int num = 0;
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        if (table[i] != nullptr) {
+            if (table[i]->key == key) {
+                return table[i]->data;
+            }
+        }
     }
-
-    return temp->data;
 }
 
 void HashMap::Remove(int key)
 {
-    Node* temp = *table;
-    while (temp->key != key) {
-        temp = temp->hashNext;
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        if (table[i] != nullptr) {
+            if (table[i]->key == key) {
+                table[i] = nullptr;
+                break;
+            }
+        }
     }
-    temp->data = -99;
-    temp->key = -99;
 }
 
 int HashMap::Count()
 {
-    Node* temp = *table;
     int count = 0;
     for (int i = 0; i < TABLE_SIZE; i++) {
-        if (temp->key != -99) {
+        if (table[i] != nullptr) {
             count++;
-            
         }
-        temp = temp->hashNext;
     }
     return count;
 }
 
 void HashMap::Clear()
 {
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        table[i] = nullptr;
+    }
 }
 
 HashMap::HashMap()
 {
-    Node* arr[TABLE_SIZE] = {};
+    table = new Node * [TABLE_SIZE];
 
     for (int i = 0; i < TABLE_SIZE; i++) {
-        arr[i] = new Node;
-        arr[i]->data = -99;
-        arr[i]->key = -99;
+        table[i] = nullptr;
     }
-    for (int i = 0; i < TABLE_SIZE - 1; i++) {
-        arr[i]->hashNext = arr[i + 1];
-    }
-    arr[TABLE_SIZE - 1]->hashNext = arr[0];
-    table = &arr[0];
 }
 
 HashMap::~HashMap()
 {
+    delete table;
 }
