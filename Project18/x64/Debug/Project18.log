@@ -1,0 +1,6 @@
+﻿  GameRoom.cpp
+C:\Users\Administrator\source\repos\Project18\GameRoom.cpp(71): error C4716: 'GameRoom::GetMasterUserInfo': 값을 반환해야 합니다.
+C:\Users\Administrator\source\repos\Project18\GameRoom.cpp(76): error C4716: 'GameRoom::GetLastUserInfo': 값을 반환해야 합니다.
+C:\Users\Administrator\source\repos\Project18\GameRoom.cpp(52): warning C4715: 'GameRoom::GetUserInfo': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\Administrator\source\repos\Project18\GameRoom.cpp(65): warning C4172: 지역 변수 또는 임시: A의 주소를 반환하고 있습니다.
+C:\Users\Administrator\source\repos\Project18\GameRoom.cpp(49): warning C4172: 지역 변수 또는 임시: A의 주소를 반환하고 있습니다.
